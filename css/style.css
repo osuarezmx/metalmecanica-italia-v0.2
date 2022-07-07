@@ -189,11 +189,11 @@ img {
 }
 .texto {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     color: var(--clr-oscuro);
     letter-spacing: .2rem;
     line-height: 2.2rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 /**-------Header--------**/
 .header {
@@ -428,17 +428,17 @@ img {
     height: auto;
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: baseline;
     overflow: hidden;
     position: relative;
     scroll-behavior: smooth;
-    gap: 30px;
-    padding-left:60px;
+    gap: 40px;
 }
 .servicios-slide {
-    min-width: 180px;
+    min-width: fit-content;
     height: auto;
     overflow: hidden;
+    min-width: 160px;
 }
 .servicios-elementos {
     display: flex;
@@ -460,11 +460,6 @@ img {
     height: 100px;
     background-size: cover;
 }
-.servicios-elementos:hover .circulo-icono {
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
-}
 .servicios-nombre {
     font-size: 1.6rem;
     letter-spacing: .1rem;
@@ -474,6 +469,13 @@ img {
     .servicios-titulo {
         width: 50%;
     }
+}
+@media (min-width: 900px) {
+    .servicios-titulo {
+        width: 33.3%;
+    }
+}
+@media (min-width: 1024px) {
     .servicios-cover {
         position: unset;
         width: 100%;
@@ -482,34 +484,23 @@ img {
     }
     .servicios-scroll {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 50px;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 45px;
         overflow: unset;
         position: unset;
-        padding-left:30px;
+        
+    }
+    .servicios-slide {
+        min-width: fit-content;
+        height: auto;
+        overflow: hidden;
+        min-width: fit-content;
     }
     .controles-servicios {
         display: none;
     }
-    .servicios-slide {
-        min-width: 300px;
-    }
     .servicios-nombre {
         font-size: 1.8rem;
-    }
-}
-@media (min-width: 900px) {
-    .servicios-titulo {
-        width: 33.3%;
-    }
-}
-@media (min-width: 1440px) {
-    .servicios-scroll {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 50px;
     }
 }
 
@@ -562,7 +553,7 @@ img {
     height: 650px;
     justify-items: center;
     overflow: hidden;
-    gap:100px;
+    gap: 100px;
     transition: .3s ease-out all;
 }
 .sectores-mobile {
@@ -577,12 +568,12 @@ img {
 .sector .sector-overlay {
     position: relative;
     width: 100%;
-    height: 101%;
-    inset: -101% 0 0 0;
+    height: 100%;
+    inset: -100% 0 0 0;
     transition: .4s ease-out all;
 }
 .sector:hover .sector-overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.9);
 }
 .sectores-contenido.active {
     height: 100%;
@@ -592,32 +583,37 @@ img {
 .sector-titulo {
     position: relative;
     inset: 80% 0 0 0;
-    padding-left: 30px;
+
 }
 .sector-nombre {
     font-size: 2.2rem;
     color: var(--clr-blanco);
-    text-shadow: 0 0 10px var(--clr-negro);
+    text-shadow: 0 0 30px var(--clr-negro);
+    padding: 10px;
     letter-spacing: .1rem;
-    transform: translateY(20px);
+    transform: translateY(0px);
     transition: .3s ease-out all;
 }
 .sector:hover .sector-nombre {
     color: var(--clr-secundario);
-    transform: translateY(-30px);
+    transform: translateY(-50px);
+    background-color: transparent;
     text-shadow: none;
+    
 }
 .texto-overlay {
     color: var(--clr-blanco);
     opacity: 0;
     visibility: hidden;
     transform: translateY(0);
+    padding-inline: 10px;
 }
 .sector:hover .texto-overlay {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-20px);
+    transform: translateY(-40px);
     transition: .3s ease-out all;
+    
 }
 .sector-fondo {
     object-fit: cover;
@@ -640,24 +636,15 @@ img {
 @media (min-width: 980px) {
     .sectores-contenido {
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: clamp(260px, 450px, 380px);
-        height: clamp(260px, 450px, 380px);
     }
     .sector-titulo {
         position: relative;
-        padding-left: 15px;
     }
     .sector-fondo {
         height: clamp(260px, 480px, 380px);
     }
 }
 @media (min-width:1440px) {
-    .sectores-contenido {
-        height: clamp(420px, 507px, 450px);
-    }
-    .sector-fondo {
-        height: clamp(420px, 507px, 450px);
-    }
     .sector .sector-overlay {
         position: relative;
         width: 100%;
