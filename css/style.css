@@ -177,7 +177,7 @@ img {
     font-family: var(--fuenteHeading);
     font-size: 3.8rem;
     color: var(--clr-primario);
-    font-weight: 500;
+    font-weight: 600;
 }
 .sub-heading {
     font-family: 'Manrope', sans-serif;
@@ -185,14 +185,14 @@ img {
     color: var(--clr-secundario);
     letter-spacing: .1rem;
     line-height: 2.5rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 .texto {
     font-family: 'Manrope', sans-serif;
     font-size: 1.7rem;
     color: var(--clr-oscuro);
     letter-spacing: .2rem;
-    line-height: 2.2rem;
+    line-height: 2.6rem;
     font-weight: 400;
 }
 /**-------Header--------**/
@@ -516,12 +516,6 @@ img {
 .sectores-titulo h3 {
     padding-top: 20px;
 }
-.sectores-img {
-    position: relative;
-    inset: 0;
-    width: 100%;
-    height: 300px;
-}
 @media (min-width:768px) {
     .sectores-titulo {
         width: 50%;
@@ -536,12 +530,6 @@ img {
     .sectores-inicio {
         display: flex;
         flex-direction: row;
-    }
-    .sectores-img {
-        position: relative;
-        inset: -50px 0 0 0;
-        width: 100%;
-        height: 300px;
     }
 }
 .sectores-contenido {
@@ -558,13 +546,14 @@ img {
 }
 .sectores-mobile {
     position: relative;
-    inset: -40px 0 0 0;
+    inset: 60px 0 0 0;
     text-align: center;
     cursor: pointer;
     z-index: 99;
     opacity: 1;
     visibility: visible;
 }
+
 .sector .sector-overlay {
     position: relative;
     width: 100%;
@@ -583,7 +572,6 @@ img {
 .sector-titulo {
     position: relative;
     inset: 80% 0 0 0;
-
 }
 .sector-nombre {
     font-size: 2.2rem;
@@ -591,72 +579,99 @@ img {
     text-shadow: 0 0 30px var(--clr-negro);
     padding: 10px;
     letter-spacing: .1rem;
-    transform: translateY(0px);
+    transform: translateY(30px);
     transition: .3s ease-out all;
+    background-color: #18559e;
+    margin-inline: 5px;
 }
 .sector:hover .sector-nombre {
     color: var(--clr-secundario);
-    transform: translateY(-50px);
+    transform: translateY(-30px);
     background-color: transparent;
     text-shadow: none;
-    
+    margin-inline: 0;
+    padding-inline: 15px;
 }
 .texto-overlay {
     color: var(--clr-blanco);
     opacity: 0;
     visibility: hidden;
     transform: translateY(0);
-    padding-inline: 10px;
+    padding-inline: 15px;
 }
 .sector:hover .texto-overlay {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-40px);
+    transform: translateY(-20px);
     transition: .3s ease-out all;
-    
 }
 .sector-fondo {
     object-fit: cover;
-    width: fit-content;
+    width: 100%;
     height: 100%;
 }
 @media (min-width: 768px) {
     .sectores-contenido {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
         gap: 0;
         padding-top: 20px;
         height:100%;
+    }
+    .sector {
+        height: 100%;
+        width: 100%;
     }
     .sectores-mobile {
         opacity: 0;
         visibility: hidden;
     }
+    .sectores-contenido.active {
+        gap: 0;
+    }
 }
-@media (min-width: 980px) {
+@media (min-width: 1080px) {
     .sectores-contenido {
         grid-template-columns: repeat(6, 1fr);
+        gap: 0;
     }
     .sector-titulo {
         position: relative;
     }
-    .sector-fondo {
-        height: clamp(260px, 480px, 380px);
+    .sector-nombre {
+        transform: translateY(10px);
+    }
+    .sector:hover .sector-nombre {
+        transform: translateY(-55px);
+    }
+    .sector:hover .texto-overlay {
+        transform: translateY(-45px);
+    }
+}
+@media (min-width:1350px) {
+  .sector-nombre {
+        transform: translateY(30px);
+    }
+    .sector:hover .sector-nombre {
+        transform: translateY(-30px);
+    }
+    .sector:hover .texto-overlay {
+        transform: translateY(-20px);
     }
 }
 @media (min-width:1440px) {
     .sector .sector-overlay {
         position: relative;
         width: 100%;
-        height: 120%;
-        inset: -120% 0 0 0;
+        height: 100%;
+        inset: -100% 0 0 0;
     }
 }
 
 /**-------Especializados--------**/
 .especializados {
-    background-color: var(--clr-blanco);
     padding: 80px 0 80px 0;
+    margin-top: 70px;
 }
 .heading-azul {
     color: var(--clr-primario);
@@ -669,6 +684,9 @@ img {
     padding-top: 20px;
 }
 @media (min-width:768px) {
+    .especializados {
+        margin-top: 00px;
+    }
     .especializados-titulo {
         width: 50%;
     }
